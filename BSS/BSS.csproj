@@ -1,0 +1,759 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E8AF2B6A-EC60-49D3-BA13-70DB2C0C505A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BSS</RootNamespace>
+    <AssemblyName>BSS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44325</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.2.0.1\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>..\packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.3.4.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About.aspx" />
+    <Content Include="AddFoundProduct.aspx" />
+    <Content Include="AddFoundProduct.css" />
+    <Content Include="AddLostProduct.css" />
+    <Content Include="AddNotice.aspx" />
+    <Content Include="AddProduct.aspx" />
+    <Content Include="AddProduct.css" />
+    <Content Include="afterfilling.aspx" />
+    <Content Include="AllFoundProducts.aspx" />
+    <Content Include="AllLostProducts.aspx" />
+    <Content Include="AllSellProducts.aspx" />
+    <Content Include="AllSellProducts.css" />
+    <Content Include="ArtandCraft.aspx" />
+    <Content Include="ArtandCraft.css" />
+    <Content Include="Cards.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Creater.aspx" />
+    <Content Include="Creater.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="DeleteFoundProduct.aspx" />
+    <Content Include="DeleteLostProduct.aspx" />
+    <Content Include="DeleteProduct.aspx" />
+    <Content Include="DeleteServices.aspx" />
+    <Content Include="departmentNotice.aspx" />
+    <Content Include="departmentNotice.css" />
+    <Content Include="event.aspx" />
+    <Content Include="event.css" />
+    <Content Include="Eyebrow.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="GetServices.aspx" />
+    <Content Include="GetServices.css" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="AddLostProduct.aspx" />
+    <Content Include="Images\Eyebrow\EyeBrow1.jpg" />
+    <Content Include="Images\Eyebrow\EyeBrow2.jpg" />
+    <Content Include="Images\Eyebrow\EyeBrow3.jpg" />
+    <Content Include="Images\Eyebrow\EyeBrow4.jpg" />
+    <Content Include="Images\Handmade\Hand1.jpg" />
+    <Content Include="Images\Handmade\Hand2.jpg" />
+    <Content Include="Images\Handmade\Hand4.jpg" />
+    <Content Include="Images\Makeupp\Makeup1.jpeg" />
+    <Content Include="Images\Makeupp\Makeup2.jpg" />
+    <Content Include="Images\Makeupp\Makeup3.jpg" />
+    <Content Include="Images\Makeupp\Makeup4.jpg" />
+    <Content Include="Images\Mendies\Mehndi1.jpg" />
+    <Content Include="Images\Mendies\Mehndi2.jpg" />
+    <Content Include="Images\Mendies\Mehndi3.jpg" />
+    <Content Include="Images\Mendies\Mehndi4.jpeg" />
+    <Content Include="Images\Painting\Painting1.jpg" />
+    <Content Include="Images\Painting\Painting2.jpg" />
+    <Content Include="Images\Painting\Painting3.jpg" />
+    <Content Include="Images\Painting\Painting4.jpg" />
+    <Content Include="Images\Sketch\Sketch1.jpg" />
+    <Content Include="Images\Sketch\Sketch2.jpg" />
+    <Content Include="Images\Sketch\Sketch3.jpg" />
+    <Content Include="Images\Sketch\Sketch4.jpg" />
+    <Content Include="Images\SkinCare\Skin2" />
+    <Content Include="Images\SkinCare\Skin3.webp" />
+    <Content Include="Images\SkinCare\Skin4.webp" />
+    <Content Include="Images\Handmade\Hand3.webp" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Grooming.aspx" />
+    <Content Include="Grooming.css" />
+    <Content Include="handmade.aspx" />
+    <Content Include="homePage.aspx" />
+    <Content Include="homepage.css" />
+    <Content Include="Images\Cards\Card1.jpg" />
+    <Content Include="Images\Cards\Card2.jpg" />
+    <Content Include="Images\Cards\Card3.jpg" />
+    <Content Include="Images\Cards\Card4.jpg" />
+    <Content Include="Images\Creater\Aditi.jpg" />
+    <Content Include="Images\Creater\Shrishti.jpg" />
+    <Content Include="Images\Creater\Tanya.jpg" />
+    <Content Include="Images\SkinCare\Skin1.jpg" />
+    <Content Include="Landing.aspx" />
+    <Content Include="Landing.css" />
+    <Content Include="Login.aspx" />
+    <Content Include="Login.css" />
+    <Content Include="loopingPage.aspx" />
+    <Content Include="loopingPage.css" />
+    <Content Include="LostFound.aspx" />
+    <Content Include="LostFound.css" />
+    <Content Include="Makeup.aspx" />
+    <Content Include="Mehendi.aspx" />
+    <Content Include="MyFoundProducts.aspx" />
+    <Content Include="MyLostFound.aspx" />
+    <Content Include="MyLostProducts.aspx" />
+    <Content Include="MyProducts.aspx" />
+    <Content Include="MyProducts.css" />
+    <Content Include="MyServices.aspx" />
+    <Content Include="notice.aspx" />
+    <Content Include="notice.css" />
+    <Content Include="Painting.aspx" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="ServiceAdmin.css" />
+    <Content Include="ServiceForm.aspx" />
+    <Content Include="ServiceForm.css" />
+    <Content Include="ServiceHome.aspx" />
+    <Content Include="ServiceHome.css" />
+    <Content Include="ServiceProvide.aspx" />
+    <Content Include="ServiceProvide.css" />
+    <Content Include="SignUp.aspx" />
+    <Content Include="SignUp.css" />
+    <Content Include="Site.Master" />
+    <Content Include="Sketch.aspx" />
+    <Content Include="SkinCare.aspx" />
+    <Content Include="submitNotice.aspx" />
+    <Content Include="submitNotice.css" />
+    <Content Include="UpdateDeleteNotice.aspx" />
+    <Content Include="UpdateFoundProduct.aspx" />
+    <Content Include="UpdateLostProduct.aspx" />
+    <Content Include="UpdateNotice.aspx" />
+    <Content Include="UpdateProduct.aspx" />
+    <Content Include="UpdateService.aspx" />
+    <Content Include="UpdateService.css" />
+    <Content Include="ViewSingleFoundProduct.aspx" />
+    <Content Include="ViewSingleLostProduct.aspx" />
+    <Content Include="ViewSingleProduct.aspx" />
+    <Content Include="ViewSingleProduct.css" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddFoundProduct.aspx.cs">
+      <DependentUpon>AddFoundProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddFoundProduct.aspx.designer.cs">
+      <DependentUpon>AddFoundProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddNotice.aspx.cs">
+      <DependentUpon>AddNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddNotice.aspx.designer.cs">
+      <DependentUpon>AddNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddProduct.aspx.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddProduct.aspx.designer.cs">
+      <DependentUpon>AddProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="afterfilling.aspx.cs">
+      <DependentUpon>afterfilling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="afterfilling.aspx.designer.cs">
+      <DependentUpon>afterfilling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllFoundProducts.aspx.cs">
+      <DependentUpon>AllFoundProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllFoundProducts.aspx.designer.cs">
+      <DependentUpon>AllFoundProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllLostProducts.aspx.cs">
+      <DependentUpon>AllLostProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllLostProducts.aspx.designer.cs">
+      <DependentUpon>AllLostProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AllSellProducts.aspx.cs">
+      <DependentUpon>AllSellProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AllSellProducts.aspx.designer.cs">
+      <DependentUpon>AllSellProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="ArtandCraft.aspx.cs">
+      <DependentUpon>ArtandCraft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ArtandCraft.aspx.designer.cs">
+      <DependentUpon>ArtandCraft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cards.aspx.cs">
+      <DependentUpon>Cards.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cards.aspx.designer.cs">
+      <DependentUpon>Cards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Creater.aspx.cs">
+      <DependentUpon>Creater.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Creater.aspx.designer.cs">
+      <DependentUpon>Creater.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteFoundProduct.aspx.cs">
+      <DependentUpon>DeleteFoundProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteFoundProduct.aspx.designer.cs">
+      <DependentUpon>DeleteFoundProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteLostProduct.aspx.cs">
+      <DependentUpon>DeleteLostProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteLostProduct.aspx.designer.cs">
+      <DependentUpon>DeleteLostProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteProduct.aspx.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteProduct.aspx.designer.cs">
+      <DependentUpon>DeleteProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteServices.aspx.cs">
+      <DependentUpon>DeleteServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteServices.aspx.designer.cs">
+      <DependentUpon>DeleteServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="departmentNotice.aspx.cs">
+      <DependentUpon>departmentNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="departmentNotice.aspx.designer.cs">
+      <DependentUpon>departmentNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="event.aspx.cs">
+      <DependentUpon>event.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="event.aspx.designer.cs">
+      <DependentUpon>event.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Eyebrow.aspx.cs">
+      <DependentUpon>Eyebrow.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Eyebrow.aspx.designer.cs">
+      <DependentUpon>Eyebrow.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GetServices.aspx.cs">
+      <DependentUpon>GetServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GetServices.aspx.designer.cs">
+      <DependentUpon>GetServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Grooming.aspx.cs">
+      <DependentUpon>Grooming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Grooming.aspx.designer.cs">
+      <DependentUpon>Grooming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="handmade.aspx.cs">
+      <DependentUpon>handmade.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="handmade.aspx.designer.cs">
+      <DependentUpon>handmade.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="homePage.aspx.cs">
+      <DependentUpon>homePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="homePage.aspx.designer.cs">
+      <DependentUpon>homePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Landing.aspx.cs">
+      <DependentUpon>Landing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Landing.aspx.designer.cs">
+      <DependentUpon>Landing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="loopingPage.aspx.cs">
+      <DependentUpon>loopingPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="loopingPage.aspx.designer.cs">
+      <DependentUpon>loopingPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LostFound.aspx.cs">
+      <DependentUpon>LostFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LostFound.aspx.designer.cs">
+      <DependentUpon>LostFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Makeup.aspx.cs">
+      <DependentUpon>Makeup.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Makeup.aspx.designer.cs">
+      <DependentUpon>Makeup.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mehendi.aspx.cs">
+      <DependentUpon>Mehendi.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mehendi.aspx.designer.cs">
+      <DependentUpon>Mehendi.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyFoundProducts.aspx.cs">
+      <DependentUpon>MyFoundProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyFoundProducts.aspx.designer.cs">
+      <DependentUpon>MyFoundProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyLostFound.aspx.cs">
+      <DependentUpon>MyLostFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyLostFound.aspx.designer.cs">
+      <DependentUpon>MyLostFound.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyLostProducts.aspx.cs">
+      <DependentUpon>MyLostProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyLostProducts.aspx.designer.cs">
+      <DependentUpon>MyLostProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyProducts.aspx.cs">
+      <DependentUpon>MyProducts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyProducts.aspx.designer.cs">
+      <DependentUpon>MyProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="MyServices.aspx.cs">
+      <DependentUpon>MyServices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MyServices.aspx.designer.cs">
+      <DependentUpon>MyServices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="notice.aspx.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="notice.aspx.designer.cs">
+      <DependentUpon>notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Painting.aspx.cs">
+      <DependentUpon>Painting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Painting.aspx.designer.cs">
+      <DependentUpon>Painting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceForm.aspx.cs">
+      <DependentUpon>ServiceForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceForm.aspx.designer.cs">
+      <DependentUpon>ServiceForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceHome.aspx.cs">
+      <DependentUpon>ServiceHome.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceHome.aspx.designer.cs">
+      <DependentUpon>ServiceHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceProvide.aspx.cs">
+      <DependentUpon>ServiceProvide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceProvide.aspx.designer.cs">
+      <DependentUpon>ServiceProvide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sketch.aspx.cs">
+      <DependentUpon>Sketch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sketch.aspx.designer.cs">
+      <DependentUpon>Sketch.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SkinCare.aspx.cs">
+      <DependentUpon>SkinCare.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SkinCare.aspx.designer.cs">
+      <DependentUpon>SkinCare.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="submitNotice.aspx.cs">
+      <DependentUpon>submitNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="submitNotice.aspx.designer.cs">
+      <DependentUpon>submitNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateDeleteNotice.aspx.cs">
+      <DependentUpon>UpdateDeleteNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateDeleteNotice.aspx.designer.cs">
+      <DependentUpon>UpdateDeleteNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateFoundProduct.aspx.cs">
+      <DependentUpon>UpdateFoundProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateFoundProduct.aspx.designer.cs">
+      <DependentUpon>UpdateFoundProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateLostProduct.aspx.cs">
+      <DependentUpon>UpdateLostProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateLostProduct.aspx.designer.cs">
+      <DependentUpon>UpdateLostProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateNotice.aspx.cs">
+      <DependentUpon>UpdateNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateNotice.aspx.designer.cs">
+      <DependentUpon>UpdateNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProduct.aspx.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateProduct.aspx.designer.cs">
+      <DependentUpon>UpdateProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateService.aspx.cs">
+      <DependentUpon>UpdateService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UpdateService.aspx.designer.cs">
+      <DependentUpon>UpdateService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSingleFoundProduct.aspx.cs">
+      <DependentUpon>ViewSingleFoundProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSingleFoundProduct.aspx.designer.cs">
+      <DependentUpon>ViewSingleFoundProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSingleLostProduct.aspx.cs">
+      <DependentUpon>ViewSingleLostProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSingleLostProduct.aspx.designer.cs">
+      <DependentUpon>ViewSingleLostProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSingleProduct.aspx.cs">
+      <DependentUpon>ViewSingleProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSingleProduct.aspx.designer.cs">
+      <DependentUpon>ViewSingleProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="AddLostProduct.aspx.cs">
+      <DependentUpon>AddLostProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddLostProduct.aspx.designer.cs">
+      <DependentUpon>AddLostProduct.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Images\Certificates\" />
+    <Folder Include="Images\FoundItem\" />
+    <Folder Include="Images\LostItem\" />
+    <Folder Include="Images\PastWork\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>11828</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44325/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
